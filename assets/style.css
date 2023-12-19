@@ -1,0 +1,74 @@
+.whole-div {
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.upper-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.highScore {
+    display: flex;
+    justify-content: left;
+    color: violet;
+}
+
+#highScore-button {
+    background: transparent;
+    border: none;
+    
+}
+
+.timer-div {
+    display: flex;
+}
+
+.timer {
+    display: flex;
+    justify-content: right;
+    font-weight: normal;
+}
+
+.quiz-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+}
+
+.starting-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start-button {
+    display: flex;
+}
+
+.starting-prompt-h1 {
+    display: flex;
+}
+
+.starting-prompt-p {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.quiz-prompt button {
+    color: white;
+    background-color: #392467;
+    border-radius: 10%;
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: violet;
+}
