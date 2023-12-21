@@ -1,4 +1,4 @@
-.whole-div {
+.wholeDiv {
     display: flex;
     align-self: center;
     flex-wrap: wrap;
@@ -6,7 +6,7 @@
     margin: 20px;
 }
 
-.upper-div {
+.upperDiv {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -18,13 +18,13 @@
     color: violet;
 }
 
-#highScore-button {
+#highScoreButton {
     background: transparent;
     border: none;
     
 }
 
-.timer-div {
+.timerDiv {
     display: flex;
 }
 
@@ -34,34 +34,34 @@
     font-weight: normal;
 }
 
-.quiz-prompt {
+.quizPrompt {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 100px;
 }
 
-.starting-prompt {
+.startingPromptDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.start-button {
+.startButton {
     display: flex;
 }
 
-.starting-prompt-h1 {
+.h1Prompt {
     display: flex;
 }
 
-.starting-prompt-p {
+.pPrompt {
     display: flex;
     font-size: 20px;
     font-weight: bold;
 }
 
-.quiz-prompt button {
+.quizPrompt button {
     color: white;
     background-color: #392467;
     border-radius: 10%;
@@ -71,4 +71,13 @@
 
 button:hover {
     background-color: violet;
+}
+
+.hidden {
+    display: none;
+}
+
+.answerChoices {
+    display: flex;
+    flex-direction: column;
 }
