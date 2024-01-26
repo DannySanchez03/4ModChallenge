@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Quiz</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="wholeDiv"> <!-- Whole div will be centerd and margined -->
@@ -20,15 +20,24 @@
             <div class="startingPromptDiv"> <!-- start prompt -->
                 <h1 class="h1Prompt">Coding Quiz Challenge</h1>
                 <p class="pPrompt">Try to answer the following code-related questions within the time limit. Keep in mind incorrect answers will penalize your score/time by ten seconds!</p>
+                <p class="highScorePTag hidden">Your final score is </p>
+                <div class="initialsDiv hidden">
+                    <p class="highScorePTag">Enter Initials: </p>
+                    <input type="text" class="userName">
+                    <button class="intitalsBtn">Submit</button>
+                </div>
+                <button class="resetBtn hidden">Reset</button>
             </div>
             <div class="startButton"> <!-- start button -->
                 <button><p>Start Quiz</p></button>
             </div>
             <div class="answerChoices">
-                
+            </div>
+            <div class="answerSubmitted hidden">
+                <h1 class="checkAnswer"></h1>
             </div>
         </div>
     </div>
-    <script src="assets/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

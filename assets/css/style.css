@@ -61,12 +61,29 @@
     font-weight: bold;
 }
 
+.highScorePTag {
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.initialsDiv {
+    display: flex;
+    align-items: center;
+}
+
+.initialsDiv input{
+    font-size: 20px;
+}
+
 .quizPrompt button {
     color: white;
     background-color: #392467;
     border-radius: 10%;
     padding: 10px 30px 10px 30px;
     font-size: 20px;
+    margin: 10px;
 }
 
 button:hover {
@@ -74,10 +91,58 @@ button:hover {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .answerChoices {
     display: flex;
     flex-direction: column;
+}
+
+.answerSubmitted {
+    width: 100%;
+    color: rgba(61, 58, 58, 0.219);
+    border-top: solid 2px;
+    /* display: flex; */
+    height: 10px;
+}
+
+.centerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+}
+
+.leftSideElements {
+    display: flex;
+    flex-direction: column;
+}
+
+.leftSideElements h1{
+    margin: 0;
+}
+
+.leftSideElements ol{
+    background-color: rgba(55, 25, 138, 0.2);
+}
+
+.leftSideElements ol li {
+    font-size: 28px;
+}
+
+.setDivRow {
+    display: flex;
+    
+}
+
+.setDivRow button {
+    color: white;
+    background-color: #392467;
+    border-radius: 10%;
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    margin: 10px;
 }
