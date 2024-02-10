@@ -44,7 +44,7 @@ function beginTimer() {
         timerInterval = setInterval(function () {
             timer--;
             updateTime.textContent = "Time: " + timer;
-
+            // console.log(updateTime.textContent);
             if (timer <= 0) {
                 // Stops execution of action at set interval
                 clearInterval(timerInterval);
@@ -61,7 +61,8 @@ function beginTimer() {
 
 function stopTimer() {
     HighScore = timer;
-    // clearInterval(timerInterval);
+    clearInterval(timerInterval);
+    updateTime.textContent = 'Time: 0';
     timerRunning = false;
     HighScore = timer;
     results();
@@ -119,14 +120,16 @@ function buildLayout(){
         let buttons = document.createElement('button');
         buttons.addEventListener('click', handleButtonClick);
         answerChoices.append(buttons);
-        console.log("I hit this " + i);
+        // console.log("I hit this " + i);
     }
 }
 
 function Question1(){
+    answerChoices.classList.remove('hidden');
+
     currentAnswer = questionsData.answers[0];
     h1Prompt.textContent = questionsData.questions[0];
-    console.log("I made it past prompting the question #1");
+    // console.log("I made it past prompting the question #1");
     for(let j = 0; j < questionsData.questionChoices1.length; j++)
     {
         answerChoices.children[j].textContent = questionsData.questionChoices1[j];
@@ -135,9 +138,11 @@ function Question1(){
 }
 
 function Question2(){
+    answerSubmitted.classList.remove('hidden');
+    checkAnswer.classList.remove('hidden');
     currentAnswer = questionsData.answers[1];
     h1Prompt.textContent = questionsData.questions[1];
-    console.log("I made it past prompting the question #2");
+    // console.log("I made it past prompting the question #2");
     for(let j = 0; j < questionsData.questionChoices2.length; j++)
     {
         answerChoices.children[j].textContent = questionsData.questionChoices2[j];
@@ -149,7 +154,7 @@ function Question2(){
 function Question3(){
     currentAnswer = questionsData.answers[2];
     h1Prompt.textContent = questionsData.questions[2];
-    console.log("I made it past prompting the question #3");
+    // console.log("I made it past prompting the question #3");
     for(let j = 0; j < questionsData.questionChoices3.length; j++)
     {
         answerChoices.children[j].textContent = questionsData.questionChoices3[j];
@@ -161,7 +166,7 @@ function Question3(){
 function Question4(){
     currentAnswer = questionsData.answers[3];
     h1Prompt.textContent = questionsData.questions[3];
-    console.log("I made it past prompting the question #4");
+    // console.log("I made it past prompting the question #4");
     for(let j = 0; j < questionsData.questionChoices4.length; j++)
     {
         answerChoices.children[j].textContent = questionsData.questionChoices4[j];
@@ -173,7 +178,7 @@ function Question4(){
 function Question5(){
     currentAnswer = questionsData.answers[4];
     h1Prompt.textContent = questionsData.questions[4];
-    console.log("I made it past prompting the question #5");
+    // console.log("I made it past prompting the question #5");
     for(let j = 0; j < questionsData.questionChoices5.length; j++)
     {
         answerChoices.children[j].textContent = questionsData.questionChoices5[j];
@@ -184,17 +189,18 @@ function Question5(){
 
 function results(){
     // prepare to save to localstorage
+    timer.textContent = '0';
     h1Prompt.textContent = 'All Done'
     answerChoices.classList.add('hidden');
     highScorePTag.classList.remove('hidden');
     initialsDiv.classList.remove('hidden');
     resetBtn.classList.remove('hidden');
     highScorePTag.textContent = 'Your final score is ' + HighScore + '.';
-    console.log("Results page");
+    // console.log("Results page");
 }
 
 startButton.addEventListener('click', function() {
-    console.log("Im here");
+    // console.log("Im here");
     startButton.classList.add('hidden'); // hide start button
     pPrompt.classList.add('hidden'); // p tag
     answerSubmitted.classList.add('hidden');
@@ -204,7 +210,7 @@ startButton.addEventListener('click', function() {
     buildLayout(); // makes the buttons for the answer choices
     // console.log("I made it past making the buttons");
     Question1(); // display questions
-    console.log("I made it past displaying the questions");
+    // console.log("I made it past displaying the questions");
 })
 
 function reset() {
@@ -226,6 +232,7 @@ function reset() {
     initialsDiv.classList.add('hidden');
     checkAnswer.classList.add('hidden');
     highScorePTag.classList.add('hidden');
+    resetBtn.classList.add('hidden');
     currentAnswer = questionsData.answers[0];
     currentQuestion = 1
     timer = 75;
@@ -264,25 +271,16 @@ intitalsBtn.addEventListener('click', function() {
     let setKey = JSON.stringify(parsedData);
     localStorage.setItem('highScore', setKey);
 
-    console.log(parsedData);
-    console.log(setKey);
+    // console.log(parsedData);
+    // console.log(setKey);
 
     window.location = './highScores.html';
 });
 
-// backBtn.addEventListener('click', function() {
-//     window.location = './index.html';
-// })
+highScoreButton.addEventListener('click', function() {
+    window.location = './highScores.html';
+})
 
-// startButton.addEventListener('click', function() {
-    
-// })
-
-// let myArray = [10, 20, 30, 50];
-// let newPosition = 2; // The position where you want to insert the new element
-// let newElement = 4; // The element you want to insert
-
-// // Use splice() to insert the new element at the specified position
-// myArray.splice(newPosition, 0, newElement);
-
-// console.log(myArray); // Output: [1, 2, 3, 4, 5]
+resetBtn.addEventListener('click', () => {
+    reset();
+})
