@@ -1,10 +1,10 @@
-# 4ModChallenge
-Module 4 Challenge
-Deployed: https://dannysanchez03.github.io/4ModChallenge/
+# API Quiz
+4th Challenge
+Deployed: [here](https://dannysanchez03.github.io/API-Quiz/)
 
 ## Description
 
-In this Module 4 Challenge we were told to make a API Quiz where it is timed and a Highscore can be saved of how fast it can get done without getting the questions wrong.
+In this 4th Challenge I was told to make a Timed web API Quiz, where theres multiple choice questions and each one you get wrong reduces your timer, and highscores can be save to your local storage with the saved name given by the player.
 
 ## Installation
 
